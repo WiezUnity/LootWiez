@@ -11,6 +11,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //all of these examples loads level 0
     }
 
+    public void SettingsMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2); //all of these examples loads level 0
+    }
+
     public void QuitGame()
     {
         Application.Quit();

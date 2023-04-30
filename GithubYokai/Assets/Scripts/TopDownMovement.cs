@@ -7,6 +7,7 @@ public class TopDownMovement : MonoBehaviour
     public float moveSpeed;
     public Rigidbody2D rb2d;
     private Vector2 moveInput;
+    public Animator animator;
 
     //Start is called before the first frame update
     void Start()
@@ -23,5 +24,9 @@ public class TopDownMovement : MonoBehaviour
         moveInput.Normalize();
 
         rb2d.velocity = moveInput * moveSpeed;
+
+        animator.SetFloat("Horizontal", moveInput.x);
+        animator.SetFloat("Vertical", moveInput.y);
+        animator.SetFloat("Speed", moveInput.sqrMagnitude);
     }
 }
